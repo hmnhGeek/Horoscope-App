@@ -1,0 +1,11 @@
+This app can provide you with daily horoscope.
+
+TO KNOW YOUR DAILY HOROSCOPE
+1. Click on your zodiac sign on Home Page.
+2. Well, that's it!!
+
+DEVELOPER: Himanshu Sharma
+
+** HOROSCOPES SCRAPED FROM astrology.com **
+
+MAIL: develop.himanshu@gmail.com

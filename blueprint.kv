@@ -1,0 +1,249 @@
+
+<home>:
+    orientation: "veritcal"
+    name: "homepage"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "background.png"
+    
+    GridLayout:
+    	spacing: 2
+        cols: 1
+        rows: 6
+
+        Label:
+        	text: "Check your horoscope"
+        	size_hint: 1, None
+        	text_size: self.width, None
+        	height: self.texture_size[1]
+        	halign: "center"
+        	font_size: 80
+        	
+        GridLayout:
+        	cols: 3
+        	rows: 4
+	        Button:
+	        	id: one
+	            text: "Aries"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("aries")
+	            	
+	        Button:
+	        	id: two
+	            text: "Taurus"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("taurus")
+	        Button:
+	        	id: three
+	            text: "Gemini"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("gemini")
+	        Button:
+	        	id: four
+	            text: "Cancer"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("cancer")
+	        Button:
+	        	id: five
+	            text: "Leo"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("leo")
+	        Button:
+	        	id: six
+	            text: "Virgo"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("virgo")
+	        Button:
+	        	id: seven
+	            text: "Libra"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("libra")
+	        Button:
+	        	id: eight
+	            text: "Scorpio"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("scorpio")
+	        Button:
+	        	id: nine
+	            text: "Sagittarius"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("sagittarius")
+	        Button:
+	        	id: ten
+	            text: "Capricorn"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("capricorn")
+	        Button:
+	        	id: eleven
+	            text: "Aquarius"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("aquarius")
+	        Button:
+	        	id: twelve
+	            text: "Pisces"
+	            background_color: (0.4, 0.3, 0.1, 1)
+	            on_release:
+	            	root.load_horoscope("pisces")
+	    Button:
+	    	text: "Know your Sign"
+	    	size_hint: (1, 0.2)
+	    	background_color: (0.4, 0.7, 0.1, 1)
+	    	on_release:
+	    		root.manager.current = "all"
+	    Button:
+	    	text: "About AstroHoroscope"
+	    	size_hint: (1, 0.2)
+	    	background_color: (0.4, 0.7, 0.1, 1)
+	    	on_release:
+	    		root.manager.current = "about"
+
+<Loading>:
+    name: "loading_screen"
+    orientation: "vertical"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "background.png"
+    Label:
+    	text: "Loading, please wait..."
+    	text_size: self.width, None
+    	height: self.texture_size[1]
+    	halign: "center"
+    	font_size: 50
+    	
+
+<ResultScreen>:
+    name: "results"
+    orientation: "vertical"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "background.png"
+    GridLayout:
+        cols: 1
+        rows: 4
+        spacing: 2
+        
+        Label:
+            text: "\n\n"
+            size_hint: 1, 0.1
+
+        Label:
+            id: heading
+            size_hint: (1, None)
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: "center"
+            font_size: 70
+            color: (0.8, 0.3, 0.1, 1)
+        ScrollView:
+            Label:
+                id: result_label
+                text: "Loading, please wait..."
+                size_hint: 1, None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                halign: "center"
+                size: self.texture_size
+                font_size: 50
+                color: (1,1,1,1)
+        Button:
+            text: "Home"
+            size_hint: (1, 0.2)
+            background_color: (0.4, 0.7, 0.1, 1)
+            on_release:
+                root.manager.current = "homepage"
+
+
+<AboutAstroHoroscope>:
+	name: "about"
+    orientation: "vertical"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "background.png"
+    GridLayout:
+    	rows: 3
+    	spacing: 2
+
+    	Label:
+    		text: "About AstroHoroscope"
+    		color: (0.8, 0.3, 0.1, 1)
+    		size_hint: (1, 0.2)
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: "center"
+            font_size: 70
+
+    	ScrollView:
+    		Label:
+    			id: about_label
+    			text: root.load()
+    			size_hint: 1, None
+    			text_size: self.width, None
+    			height: self.texture_size[1]
+    			halign: "center"
+    			size: self.texture_size
+    			font_size: 50
+    			
+    	Button:
+            text: "Home"
+            size_hint: (1, 0.2)
+            background_color: (0.4, 0.7, 0.1, 1)
+            on_release:
+                root.manager.current = "homepage"
+
+<AllZodiacs>:
+	name: "all"
+    orientation: "vertical"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "background.png"
+    GridLayout:
+    	rows: 3
+    	cols: 1
+    	spacing: 2
+
+    	Label:
+    		text: "All Zodiac Signs"
+    		color: (0.8, 0.3, 0.1, 1)
+    		size_hint: (1, 0.2)
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: "center"
+            font_size: 70
+
+        ScrollView:
+        	Label:
+    			text: root.load_all()
+    			size_hint: 1, None
+    			text_size: self.width, None
+    			height: self.texture_size[1]
+    			halign: "center"
+    			size: self.texture_size
+    			font_size: 50
+    			
+    	Button:
+            text: "Home"
+            size_hint: (1, 0.2)
+            background_color: (0.4, 0.7, 0.1, 1)
+            on_release:
+                root.manager.current = "homepage"
